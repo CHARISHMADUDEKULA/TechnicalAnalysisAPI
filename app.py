@@ -423,6 +423,9 @@ def analyze():
         
     except Exception as e:
         return jsonify({'error': f'Analysis failed: {str(e)}'}), 500
+@app.route('/')
+def home():
+    return "API is working"
 
 
 
