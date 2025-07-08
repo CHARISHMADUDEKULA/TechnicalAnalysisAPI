@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 import requests
 import math
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -423,3 +424,7 @@ def analyze():
     except Exception as e:
         return jsonify({'error': f'Analysis failed: {str(e)}'}), 500
 
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 10000)))
